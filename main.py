@@ -24,7 +24,7 @@ link_enter = tkinter.Entry(root, width = 70, textvariable = link).place(x = 32, 
  
 def Downloader():
     url = YouTube(str(link.get()))
-    video = url.streams.first()
+    video = url.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
     video.download()
     tkinter.Label(root, fg="green", text ='Sucessfully Downloaded !', font ='arial 16').place(x= 130, y = 245)
  
