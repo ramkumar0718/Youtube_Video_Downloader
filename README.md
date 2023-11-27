@@ -8,3 +8,6 @@ pip install tkinter
 ```
 pip install pytube
 ```
+```
+pip install Pillow==9.5.0
+```
